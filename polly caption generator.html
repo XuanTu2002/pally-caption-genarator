@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Boost Your Social Media Engagement with AI-Powered Captions">
+    <title>Pally - AI Caption Generator</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            background-color: #121212;
+            color: #ffffff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+        }
+        input {
+            background-color: #333;
+            color: white;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .categories button {
+            background-color: #444;
+            margin: 5px;
+        }
+        .categories button:hover {
+            background-color: #666;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #222;
+            border-radius: 5px;
+        }
+        .social-share {
+            margin-top: 20px;
+        }
+        .social-share a {
+            margin: 5px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .social-share a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>Pally</header>
+    <p>Boost Your Social Media Engagement with AI-Powered Captions</p>
+    <div class="container">
+        <input type="text" id="keyword" placeholder="Enter a topic or keyword">
+        <button onclick="generateCaption()">Generate Caption</button>
+        <div class="categories">
+            <button onclick="selectCategory('inspirational')">Inspirational</button>
+            <button onclick="selectCategory('funny')">Funny</button>
+            <button onclick="selectCategory('business')">Business</button>
+            <button onclick="selectCategory('trendy')">Trendy</button>
+        </div>
+        <div class="output" id="captionOutput">Your caption will appear here.</div>
+        <button onclick="copyCaption()">Copy Caption</button>
+        <div class="social-share">
+            <a href="#">Share on Facebook</a>
+            <a href="#">Share on Twitter</a>
+            <a href="#">Share on Instagram</a>
+        </div>
+    </div>
+    <script>
+        function generateCaption() {
+            document.getElementById("captionOutput").innerText = "Here’s your AI-generated caption!";
+        }
+        function selectCategory(category) {
+            document.getElementById("captionOutput").innerText = "Here’s a " + category + " caption!";
+        }
+        function copyCaption() {
+            const caption = document.getElementById("captionOutput").innerText;
+            navigator.clipboard.writeText(caption);
+            alert("Caption copied!");
+        }
+    </script>
+</body>
+</html>
